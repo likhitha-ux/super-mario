@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Super Mario Bros - Browser Game</title>
+    <link rel="stylesheet" href="src/styles/game.css">
+</head>
+<body>
+    <div id="gameContainer">
+        <div id="ui">
+            <div id="score">Score: <span id="scoreValue">0</span></div>
+            <div id="lives">Lives: <span id="livesValue">3</span></div>
+            <div id="level">Level: <span id="levelValue">1</span></div>
+        </div>
+        <canvas id="gameCanvas" width="1024" height="512"></canvas>
+        <div id="gameOver" class="hidden">
+            <h2>Game Over</h2>
+            <p id="gameOverReason">You ran out of lives!</p>
+            <p>Final Score: <span id="finalScore">0</span></p>
+            <button id="restartBtn">Play Again</button>
+        </div>
+        <div id="instructions">
+            <p>Use ARROW KEYS to move and SPACEBAR to jump</p>
+        </div>
+    </div>
+    
+    <script type="module" src="src/main.ts"></script>
+</body>
+</html>
