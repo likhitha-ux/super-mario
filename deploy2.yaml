@@ -12,5 +12,5 @@
     - name: Run new container
       command: >
         docker run -d --name cmgsoon
-        -p 80:80
+        -p 8080:8080
         harsha497/cmgsoon:latest
