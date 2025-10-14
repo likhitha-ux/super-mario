@@ -32,9 +32,3 @@
         docker run -d --name cmgsoon
         -p 8080:8080
         harsha497/cmgsoon:latest
-
-    - name: Run new container
-      command: >
-        docker run -d --name supermario
-        -p 8080:8080
-        likhithaaa/supermario:latest
