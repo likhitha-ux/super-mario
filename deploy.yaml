@@ -15,20 +15,3 @@
         docker run -d --name supermario
         -p 8080:8080
         likhithaaa/supermario:latest
-
-- name: Deploy CMGSoon App on worker2
-  hosts: worker2
-  become: yes
-  tasks:
-    - name: Stop old container
-      command: docker rm -f supermario
-      ignore_errors: yes
-
-    - name: Pull latest image
-      command: docker pull harsha497/cmgsoon:latest
-
-    - name: Run new container
-      command: >
-        docker run -d --name cmgsoon
-        -p 80:80
-        harsha497/cmgsoon:latest
