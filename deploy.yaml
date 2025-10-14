@@ -21,7 +21,7 @@
   become: yes
   tasks:
     - name: Stop old container
-      command: docker rm -f cmgsoon
+      command: docker rm -f supermario
       ignore_errors: yes
 
     - name: Pull latest image
@@ -30,5 +30,5 @@
     - name: Run new container
       command: >
         docker run -d --name cmgsoon
-        -p 8081:8080
+        -p 80:80
         harsha497/cmgsoon:latest
