@@ -9,6 +9,39 @@
 
     - name: Pull latest image
       command: docker pull likhithaaa/supermario:latest
+- name: Deploy Node.js SuperMario App on worker1
+  hosts: worker1
+  become: yes
+  tasks:
+    - name: Stop old container
+      command: docker rm -f supermario
+      ignore_errors: yes
+
+    - name: Pull latest image
+      command: docker pull likhithaaa/supermario:latest
+
+    - name: Run new container
+      command: >
+        docker run -d --name supermario
+        -p 8080:8080
+        likhithaaa/supermario:latest
+
+- name: Deploy CMGSoon App on worker2
+  hosts: worker2
+  become: yes
+  tasks:
+    - name: Stop old container
+      command: docker rm -f cmgsoon
+      ignore_errors: yes
+
+    - name: Pull latest image
+      command: docker pull harsha497/cmgsoon:latest
+
+    - name: Run new container
+      command: >
+        docker run -d --name cmgsoon
+        -p 8080:8080
+        harsha497/cmgsoon:latest
 
     - name: Run new container
       command: >
